@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
-import Create from "../Create";
-import Home from "../Home";
+import Create from "../components/Create";
+import Home from "../components/Home";
 
 export const Routes = () => (
   <Switch>

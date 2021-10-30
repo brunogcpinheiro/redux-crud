@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { useAppDispatch } from "./store/app/hook";
-import { createUser } from "./store/features/users/users-slice";
+import { useAppDispatch } from "../../store/app/hook";
+import { createUser } from "../../store/features/users/users-slice";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { User } from "./services/mirage";
+import { User } from "../../services/mirage";
 
 const schema = yup.object().shape({
   name: yup.string().required("Campo obrigatório"),
