@@ -43,9 +43,11 @@ const About = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input type="text" placeholder="nome" {...register("name")} />
-      <p style={{ color: "red", fontSize: "0.7rem" }}>{errors.name?.message}</p>
+      <p style={{ color: "red", fontSize: "0.7rem", marginTop: "2px" }}>
+        {errors.name?.message}
+      </p>
       <input type="text" placeholder="email" {...register("email")} />
-      <p style={{ color: "red", fontSize: "0.7rem" }}>
+      <p style={{ color: "red", fontSize: "0.7rem", marginTop: "2px" }}>
         {errors.email?.message}
       </p>
       <button type="submit">Enviar</button>
