@@ -1,7 +1,7 @@
-import { SyntheticEvent, useState } from "react";
+import { Link } from "react-router-dom";
 import { useAppDispatch } from "./store/app/hook";
 import { createUser } from "./store/features/users/users-slice";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { User } from "./services/mirage";
@@ -41,17 +41,25 @@ const About = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" placeholder="nome" {...register("name")} />
-      <p style={{ color: "red", fontSize: "0.7rem", marginTop: "2px" }}>
-        {errors.name?.message}
-      </p>
-      <input type="text" placeholder="email" {...register("email")} />
-      <p style={{ color: "red", fontSize: "0.7rem", marginTop: "2px" }}>
-        {errors.email?.message}
-      </p>
-      <button type="submit">Enviar</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input type="text" placeholder="nome" {...register("name")} />
+        <p style={{ color: "red", fontSize: "0.7rem", marginTop: "2px" }}>
+          {errors.name?.message}
+        </p>
+        <input type="text" placeholder="email" {...register("email")} />
+        <p style={{ color: "red", fontSize: "0.7rem", marginTop: "2px" }}>
+          {errors.email?.message}
+        </p>
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div style={{ marginTop: "20px" }}>
+        <Link to="/">
+          <button>Back to Home</button>
+        </Link>
+      </div>
+    </>
   );
 };
 
